@@ -1,0 +1,10 @@
+build/po/*.gmo
+build/meson-private/*.dat
+build/meson-private/*.exe
+build/src/lightdm-webkit2-greeter@exe/greeter.c.o
+build/.ninja_deps
+build/src/lightdm-webkit2-greeter@exe/meson-generated_.._greeter-resources.c.o
+build/src/lightdm-webkit2-greeter
+build/src/lightdm-webkit2-greeter-webext@sha/webkit2-extension.c.o
+build/src/liblightdm-webkit2-greeter-webext.so
+src/gresource/js/bundle.js

@@ -1928,12 +1928,13 @@ web_page_console_message_sent_cb(WebKitWebPage        *web_page,
 
 	msg_text = webkit_console_message_get_text(console_message);
 	is_error =
+		NULL == strstr(msg_text, "detect_theme_errors") && (
 		NULL != strstr(msg_text, "Uncaught") ||
 		NULL != strstr(msg_text, "Error") ||
 		NULL != strstr(msg_text, "error") ||
 		NULL != strstr(msg_text, "Exception") ||
 		NULL != strstr(msg_text, "exception") ||
-		NULL != strstr(msg_text, "ERROR");
+		NULL != strstr(msg_text, "ERROR") );
 
 	if (! is_error) {
 		return;

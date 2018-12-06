@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+export DESTROOT=$(CURDIR)/debian/lightdm-webkit2-greeter
+export CONFIG_FILE=$(DESTROOT)/etc/lightdm/lightdm-webkit2-greeter.conf
+
+override_dh_auto_configure:
+	cd build && meson --prefix=/usr ..
+
+override_dh_auto_install:
+	cd build && ninja && export DESTDIR=$(DESTROOT) && ninja install
+	sed -i 's|lightdm-webkit/themes/antergos/img/antergos.png|help/C/ubuntu-help/figures/ubuntu-logo.png|g' $(CONFIG_FILE)
+	sed -i 's|lightdm-webkit/themes/antergos/img/antergos-logo-user.png|pixmaps/faces/sunset.jpg|g' $(CONFIG_FILE)
+
+	dh_auto_install
+
+%:
+	dh $@

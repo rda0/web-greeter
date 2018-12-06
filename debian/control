@@ -1,0 +1,17 @@
+Source: lightdm-webkit2-greeter
+Section: x11
+Priority: optional
+Maintainer: Antergos Developers <dev@antergos.com>
+Uploaders: Dustin Falgout <dustin@antergos.com>
+Build-Depends: debhelper (>= 9), libgtk-3-dev, libwebkit2gtk-4.0-dev, libdbus-glib-1-dev, meson, gettext
+Standards-Version: 3.9.6
+Homepage: https://github.com/antergos/lightdm-webkit2-greeter
+
+Package: lightdm-webkit2-greeter
+Provides: lightdm-greeter
+Replaces: lightdm-webkit-greeter
+Breaks: lightdm-webkit-greeter
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: accountsservice
+Description: LightDM greeter that uses WebKit2 for theming via HTML/JavaScript

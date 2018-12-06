@@ -135,10 +135,10 @@ show_theme_recovery_modal() {
 		_("Greeter Theme Error Detected"),
 		GTK_WINDOW(window),
 		GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-		_("Load _Default Theme"),
+		_("Reload Theme"),
 		GTK_RESPONSE_ACCEPT,
-		_("Load _Fallback Theme"),
-		GTK_RESPONSE_OK,
+		//_("Load _Fallback Theme"),
+		//GTK_RESPONSE_OK,
 		_("_Cancel"),
 		GTK_RESPONSE_REJECT,
 		NULL
@@ -148,7 +148,7 @@ show_theme_recovery_modal() {
 	button = gtk_dialog_get_widget_for_response(GTK_DIALOG(dialog), GTK_RESPONSE_REJECT);
 	button_box = gtk_widget_get_parent(button);
 	label = gtk_label_new(
-		_("An error was detected in the current theme that could interfere with the system login process.")
+		_("An error was detected. Try to reload.\nPlease report this to your administrator.")
 	);
 
 	gtk_button_box_set_layout(GTK_BUTTON_BOX(button_box), GTK_BUTTONBOX_EXPAND);
@@ -162,14 +162,14 @@ show_theme_recovery_modal() {
 		return;
 	}
 
-	gchar *log_msg = "[ERROR] :: A problem was detected with the current theme. Falling back to default theme...";
+	gchar *log_msg = "ERROR: A problem was detected while loading the theme. Trying to reload...";
 	gchar *fallback_theme;
 
 	if (GTK_RESPONSE_ACCEPT == response) {
-		fallback_theme = "antergos";
+		fallback_theme = "luminosity";
 
 	} else {
-		fallback_theme = "simple";
+		fallback_theme = "luminosity";
 	}
 
 	g_warning("%s", log_msg);
