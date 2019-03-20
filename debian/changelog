@@ -1,3 +1,9 @@
+lightdm-webkit2-greeter (2.2.5-4) stable; urgency=medium
+
+  * Exit on theme error.
+
+ -- Sven Mäder (rda) <maeder@phys.ethz.ch>  Wed, 20 Mar 2019 12:23:38 +0100
+
 lightdm-webkit2-greeter (2.2.5-3) stable; urgency=medium
 
   * Merge new upstream packaging changes.

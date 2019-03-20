@@ -124,7 +124,7 @@ lock_hint_enabled_handler(void) {
 
 static void
 show_theme_recovery_modal() {
-	GtkWidget
+	/*GtkWidget
 		*dialog,
 		*label,
 		*content_area,
@@ -178,7 +178,9 @@ show_theme_recovery_modal() {
 	webkit_web_view_load_uri(
 		WEBKIT_WEB_VIEW(web_view),
 		g_strdup_printf("file://%s/%s/index.html", THEME_DIR, fallback_theme)
-	);
+	);*/
+
+    exit(1);
 }
 
 
